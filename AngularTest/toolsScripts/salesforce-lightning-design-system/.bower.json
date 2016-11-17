@@ -1,0 +1,15 @@
+{
+  "name": "salesforce-lightning-design-system",
+  "homepage": "https://github.com/salesforce-ux/design-system-bower",
+  "version": "1.0.2",
+  "_release": "1.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.2",
+    "commit": "d386f9dd77ca870d3312ef71c7893f1ac77f36ad"
+  },
+  "_source": "https://github.com/salesforce-ux/design-system-bower.git",
+  "_target": "^1.0.2",
+  "_originalSource": "salesforce-lightning-design-system",
+  "_direct": true
+}

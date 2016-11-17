@@ -1,0 +1,25 @@
+﻿<div ng-controller="GlossaryController as vm" ng-init="vm.onInit()">
+    <div class="form-group">
+        <h3 class="slds-text-heading--medium">{{vm.formTitle}}</h3>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-5">
+            <input name="search" type="text" class="form-control" placeholder="Search..." ng-model="vm.glossaryItem" />
+        </div>
+        <div class="col-md-5">
+            <button class="btn btn-primary" ng-click="vm.searchGlossary()">Ok</button>
+        </div>
+        <div class="col-md-2">
+            <select class="form-control pull-right" ng-model="vm.selectedLanguage" ng-options="item for item in vm.languages" ng-change="vm.onLanguageSelected()">
+                <option ng-if="!vm.selectedLanguage" value="">--Languages--</option>
+            </select>
+        </div>
+    </div>
+
+    <div infinite-scroll="vm.showMoreRecords()">
+        <div ng-repeat="item in vm.myList | orderBy: 'title' | filter : vm.filterByGlossaryItem | limitTo: vm.recordsToDisplay">
+            <record-details record="item" description="item.content">
+            </record-details>
+        </div>
+    </div>
+</div>

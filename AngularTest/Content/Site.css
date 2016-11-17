@@ -1,0 +1,50 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+textarea {
+    resize: none;
+}
+
+.no-lateral-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+.slds-card__body {
+  border-bottom: 1px solid #d8dde6 !important;
+  background-color:#fff !important; 
+}
+
+.navbar-inverse {
+    background-color: #f3f3f4 !important;
+    border-bottom: 1px solid #909db5 !important;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #999999 !important;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #040000 !important;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #999999 !important;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #040000 !important;
+}

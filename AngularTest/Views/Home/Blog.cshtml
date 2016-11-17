@@ -1,0 +1,30 @@
+﻿<div ng-controller="BlogController as vm" ng-init="vm.onInit()">
+    <div class="row form-group">
+        <div class="col-md-10">
+            <h3 class="slds-text-heading--medium">{{vm.formTitle}}</h3>
+        </div>
+        <div class="col-md-2">
+            <select class="slds-select pull-right" ng-model="vm.selectedLanguage" ng-options="item for item in vm.languages" ng-change="vm.onLanguageSelected()">
+                <option ng-if="!vm.selectedLanguage" value="">--Languages--</option>
+            </select>
+        </div>
+    </div>
+
+    <div infinite-scroll="vm.showMoreRecords()">
+        <div ng-repeat="item in vm.myList | orderBy: '-date' | limitTo: vm.recordsToDisplay">
+            <record-details record="item" description="item.excerpt">
+                <header>
+                    <div class="col-md-2">
+                        <label class="slds-text-heading--x-small pull-right">{{vm.formatDate(item.date) | date:'MM/dd/yyyy'}}</label>
+                    </div>
+                </header>
+                <content>
+                    <div class="form-group" style="padding-left: 1.25rem;">
+                        <i>in</i>
+                        <i style="white-space: pre-wrap;" ng-repeat="cat in item.categories">category {{cat}} {{$last ? '' : ', '}}</i>
+                    </div>
+                </content>
+            </record-details>
+        </div>
+    </div>
+</div>

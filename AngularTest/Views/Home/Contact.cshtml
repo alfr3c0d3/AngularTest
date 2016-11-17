@@ -1,0 +1,35 @@
+﻿
+
+<div ng-controller="ContactController as vm" class="col-md-8">
+    <form name="contactForm" ng-submit="vm.submit()" novalidate>
+        <div class="form-group">
+            <h3 class="slds-text-heading--medium">Contact Us</h3>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-8">
+                <input name="name" class="form-control" type="text" placeholder="Name..." ng-model="vm.name" ng-blur="vm.validate()" required />
+                <small class="text-danger" ng-if="contactForm.name.$invalid && contactForm.name.$touched">This field is required</small>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-8">
+                <input name="email" type="email" class="form-control" placeholder="Email Address..." ng-model="vm.email" ng-blur="vm.validate()" required />
+                <small class="text-danger" ng-if="contactForm.email.$invalid && contactForm.email.$touched">This field is required and it must be a correct email format</small>
+            </div>
+            <div class="col-md-4">
+                <select name="reasonForContact" class="slds-select" ng-model="vm.reason" ng-options="item for item in vm.reasonsForContact" ng-blur="vm.validate()" required>
+                    <option ng-if="!vm.reason" value="">--Reason for Contact--</option>
+                </select>
+                <small class="text-danger" ng-if="contactForm.reasonForContact.$invalid && contactForm.reasonForContact.$touched">This field is required, you must select an option</small>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <textarea name="message" class="form-control" type="text" rows="5" placeholder="Message..." ng-model="vm.message" ng-blur="vm.validate()" required></textarea>
+            <small class="text-danger" ng-if="contactForm.message.$invalid && contactForm.message.$touched">This field is required</small>
+        </div>
+        <button type="submit" class="btn btn-primary pull-right">Submit</button>
+    </form>
+</div>
+
